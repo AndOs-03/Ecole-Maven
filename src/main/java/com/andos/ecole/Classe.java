@@ -32,7 +32,7 @@ public class Classe {
         return ecole;
     }
 
-    public void setCodeClasse(String code) {
+    public void modifierCodeClasse(String code) {
         if (code == null || code.length() <= 3)
             System.out.println("Valeur incorrecte ou trop courte");
         else
