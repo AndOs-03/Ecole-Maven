@@ -4,8 +4,8 @@ import java.util.*;
 
 public class Eleve {
 
-    private String matricule;
-    private String nomComplet;
+    private final String matricule;
+    private final String nomComplet;
     private int age;
     private Classe classe;
     private double sommeResteApayer;
@@ -46,34 +46,26 @@ public class Eleve {
     }
 
     public void setClasse(Classe classe) {
-        if (classe == null)
+        if (classe == null) {
             System.out.println("Valeur incorrect pour la classe");
-        else
+        }
+        else {
             this.classe = classe;
+        }
     }
 
     public void setAge(int age) {
-        if (age <= 0)
+        if (age <= 0) {
             System.out.println("Valeur incorrecte pour l'age de l'élève");
-        else
+        }
+        else {
             this.age = age;
+        }
     }
 
     // Ajouter un versement à la liste des versements de l'eleve
-    public boolean ajouterVersement(int numeroTranche, double somme) {
-        String t = numeroTranche == 1 ? "ere" : "eme";
-
-        Enumeration<Integer> paiementEnum = listePaiement.keys();
-        while (paiementEnum.hasMoreElements()) {
-            int key = paiementEnum.nextElement();
-            if (listePaiement.containsKey(key)) {
-                System.out.println("Vous avez déjà fait le paiement pour la " + key + t + " tranche");
-                return false;
-            }
-        }
-
+    public void ajouterVersement(int numeroTranche, double somme) throws NullPointerException {
         this.listePaiement.put(numeroTranche, somme);
-        return true;
     }
 
     public void mettreAJourSommeResteAPayer(double sommeVerse) {
