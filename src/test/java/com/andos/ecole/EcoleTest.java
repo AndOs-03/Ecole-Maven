@@ -28,6 +28,8 @@ public class EcoleTest {
 
         // Then
         Assertions.assertTrue(inscriptionReussie);
+        Assertions.assertEquals(1, classe.getNombreEleve());
+        Assertions.assertEquals(1, classe.getEcole().getNombreTotalEleve());
     }
 
     @Test
