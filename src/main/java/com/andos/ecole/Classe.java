@@ -8,7 +8,7 @@ public class Classe {
 
     private String codeClasse;
     private int nombreEleve;
-    private final Ecole ecole;
+    private Ecole ecole;
     Collection<Eleve> listeEleve;
 
     public Classe(String codeClasse, Ecole ecole) {
@@ -33,10 +33,21 @@ public class Classe {
     }
 
     public void modifierCodeClasse(String code) {
-        if (code == null || code.length() <= 3)
+        if (code == null || code.length() <= 3) {
             System.out.println("Valeur incorrecte ou trop courte");
-        else
+        }
+        else {
             this.codeClasse = code;
+        }
+    }
+
+    public void setEcole(Ecole ecole) {
+        if (ecole == null) {
+            System.out.println("Valeur incorrect pour la classe");
+        }
+        else {
+            this.ecole = ecole;
+        }
     }
 
     /* Incrementer le nombre total d'élève d'une école
